@@ -12,6 +12,7 @@ public class Parqueadero {
      */
     private String nombre, contacto;
     private ArrayList<Vehiculo> vehiculos;
+    private ArrayList<Cliente> clientes;
 
     /**
      * Constructor con los atributos de la clase y la relacion de las demas
@@ -21,10 +22,11 @@ public class Parqueadero {
      * @param nombre
      * @param vehiculos
      */
-    public Parqueadero(String contacto, String nombre, ArrayList<Vehiculo> vehiculos) {
+    public Parqueadero(String contacto, String nombre, ArrayList<Vehiculo> vehiculos, ArrayList<Cliente> clientes) {
         this.contacto = contacto;
         this.nombre = nombre;
         this.vehiculos = vehiculos;
+        this.clientes = clientes;
     }
 
     /*
@@ -53,6 +55,20 @@ public class Parqueadero {
      */
     public void setContacto(String contacto) {
         this.contacto = contacto;
+    }
+
+    /*
+     * Metodo para obtener un dato
+     */
+    public ArrayList<Cliente> getClientes() {
+        return clientes;
+    }
+
+    /*
+     * Metodo para modificar un dato
+     */
+    public void setClientes(ArrayList<Cliente> clientes) {
+        this.clientes = clientes;
     }
 
     /*
@@ -104,6 +120,55 @@ public class Parqueadero {
         }
         return centinela;
 
+    }
+
+
+    /*
+    * Metodo para eliminar un vehiculo
+     */
+    public void eliminarVehiculo(String placa) {
+        for (Vehiculo vehiculo : vehiculos) {
+            if (vehiculo.getPlaca().equals(placa)) {
+                vehiculo.remove(vehiculo);
+                break;
+
+            }
+        }
+    }
+
+    /*
+        *Metodo para verificar un cliente
+     */
+    public boolean verificarCliente(String nombre) {
+        boolean centinela = false;
+        for (Cliente cliente : clientes) {
+            if (cliente.getNombre().equals(nombre)) {
+                centinela = true;
+            }
+        }
+        return centinela;
+    }
+
+    /*
+    *Metodo para eliminar un cliente
+     */
+    public void eliminarCliente(String nombre) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getNombre().equals(nombre)) {
+                cliente.remove(cliente);
+                break;
+
+            }
+        }
+    }
+
+    /*
+    *Metodo para agregar un cliente
+     */
+    public void agregarCliente(Cliente cliente) {
+        if (!verificarCliente(cliente.getNombre())) {
+            cliente.add(cliente);
+        }
     }
 
 }

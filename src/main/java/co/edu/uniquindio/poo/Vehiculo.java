@@ -111,4 +111,11 @@ public class Vehiculo {
         throw new UnsupportedOperationException("Unimplemented method 'add'");
     }
 
+    /*
+     * Metodo para remover vehiculo
+     */
+    public void remove(Vehiculo vehiculo) {
+        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+    }
+
 }
