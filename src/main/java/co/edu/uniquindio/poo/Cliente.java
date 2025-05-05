@@ -88,4 +88,14 @@ public class Cliente {
     public String toString() {
         return "Cliente [nombre=" + nombre + ", \ntelefono=" + telefono + ", \nid=" + id + ", \ncorreo=" + correo + "]";
     }
+
+    public void remove(Cliente cliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'remove'");
+    }
+
+    public void add(Cliente cliente) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'add'");
+    }
 }
